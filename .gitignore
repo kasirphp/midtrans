@@ -1,0 +1,6 @@
+# IDE Configuration
+.idea/
+.vscode/
+
+# Composer Packages
+vendor/

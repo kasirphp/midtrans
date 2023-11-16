@@ -1,0 +1,36 @@
+{
+    "name": "kasir/midtrans",
+    "description": "A framework agnostic Midtrans client PHP package.",
+    "authors": [
+        {
+            "name": "Risang Baskoro",
+            "email": "risangbaskoro@gmail.com"
+        }
+    ],
+    "support": {
+        "email": "contact@kasirphp.com",
+        "issues": "https://github.com/kasirphp/midtrans/issues",
+        "source": "https://github.com/kasirphp/midtrans"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/risangbaskoro"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kasir\\Midtrans\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kasir\\Midtrans\\Tests\\": "tests/"
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
