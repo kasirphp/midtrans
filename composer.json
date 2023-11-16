@@ -23,7 +23,8 @@
     },
     "require-dev": {
         "rector/rector": "^0.18",
-        "friendsofphp/php-cs-fixer": "^3.38"
+        "friendsofphp/php-cs-fixer": "^3.38",
+        "pestphp/pest": "^2.24"
     },
     "autoload": {
         "psr-4": {
@@ -36,5 +37,10 @@
         }
     },
     "prefer-stable": true,
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
 }
