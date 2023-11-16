@@ -21,6 +21,10 @@
     "require": {
         "php": "^8.1"
     },
+    "require-dev": {
+        "rector/rector": "^0.18",
+        "friendsofphp/php-cs-fixer": "^3.38"
+    },
     "autoload": {
         "psr-4": {
             "Kasir\\Midtrans\\": "src/"

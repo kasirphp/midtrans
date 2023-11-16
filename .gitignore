@@ -4,3 +4,6 @@
 
 # Composer Packages
 vendor/
+
+# PHP CS Fixer
+.php-cs-fixer*
