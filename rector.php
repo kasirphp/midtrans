@@ -13,6 +13,10 @@ return static function (RectorConfig $rectorConfig): void {
         __DIR__.'/tests',
     ]);
 
+    $rectorConfig->skip([
+        __DIR__.'/tests/Arch.php',
+    ]);
+
     $rectorConfig->rules([
         DeclareStrictTypesRector::class,
         InlineConstructorDefaultToPropertyRector::class,
