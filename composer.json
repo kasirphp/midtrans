@@ -24,7 +24,8 @@
     "require-dev": {
         "rector/rector": "^0.18",
         "friendsofphp/php-cs-fixer": "^3.38",
-        "pestphp/pest": "^2.24"
+        "pestphp/pest": "^2.24",
+        "symfony/var-dumper": "^6.3"
     },
     "autoload": {
         "psr-4": {
