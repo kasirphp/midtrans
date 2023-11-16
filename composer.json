@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Kasir\\Midtrans\\": "src/"
+            "Kasir\\": "src/"
         }
     },
     "autoload-dev": {
