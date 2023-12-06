@@ -45,8 +45,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          composer install --no-interaction --prefer-dist --optimize-autoloader
-          composer update --${{ matrix.dependency-version }}
+          composer update --${{ matrix.dependency-version }} --with-all-dependencies
 
       - name: Tests
-        run: ./vendor/bin/pest
+        run: ./vendor/bin/pest --coverage
