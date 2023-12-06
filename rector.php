@@ -10,17 +10,15 @@ use Rector\TypeDeclaration\Rector\StmtsAwareInterface\DeclareStrictTypesRector;
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths([
         __DIR__.'/src',
-        __DIR__.'/tests',
     ]);
 
     $rectorConfig->skip([
-        __DIR__.'/tests/Arch.php',
+        __DIR__.'/tests',
     ]);
 
     $rectorConfig->rules([
         DeclareStrictTypesRector::class,
         InlineConstructorDefaultToPropertyRector::class,
-        FinalizeClassesWithoutChildrenRector::class,
     ]);
 
     $rectorConfig->sets([
@@ -29,6 +27,5 @@ return static function (RectorConfig $rectorConfig): void {
         SetList::DEAD_CODE,
         SetList::EARLY_RETURN,
         SetList::TYPE_DECLARATION,
-        SetList::PRIVATIZATION,
     ]);
 };
