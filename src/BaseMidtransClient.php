@@ -11,6 +11,8 @@ use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface as PsrClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use function is_string;
+use function preg_match;
 
 class BaseMidtransClient
 {
@@ -109,7 +111,7 @@ class BaseMidtransClient
 
     protected function validateConfig(array $config): void
     {
-        if (null !== $config['key'] && !\is_string($config['key'])) {
+        if (null !== $config['key'] && !is_string($config['key'])) {
             throw new InvalidArgumentException('key must be null or a string');
         }
 
@@ -119,7 +121,7 @@ class BaseMidtransClient
             throw new InvalidArgumentException($msg);
         }
 
-        if (null !== $config['key'] && (\preg_match('/\s/', $config['key']))) {
+        if (null !== $config['key'] && (preg_match('/\s/', $config['key']))) {
             $msg = 'key cannot contain whitespace';
 
             throw new InvalidArgumentException($msg);
