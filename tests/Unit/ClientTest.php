@@ -1,15 +1,23 @@
 <?php
 
-test('Client payment property returns PaymentAPI', function () {
-    $client = \Kasir\Midtrans::client('something');
+use Kasir\Midtrans\MidtransClient;
+use Kasir\Midtrans\PaymentService;
 
-    expect($client->payment)
-        ->toBeInstanceOf(\Kasir\PaymentApi::class);
+it('can create a client', function () {
+    $client = new MidtransClient('key');
+
+    expect($client)->toBeInstanceOf(MidtransClient::class);
 });
 
-test('Client subscription property returns SubscriptionAPI', function () {
-    $client = \Kasir\Midtrans::client('something');
 
-    expect($client->subscription)
-        ->toBeInstanceOf(\Kasir\SubscriptionApi::class);
+it('can get the corresponding service', function () {
+    $services = [
+        'payment' => PaymentService::class,
+    ];
+
+    $client = new MidtransClient();
+
+    foreach ($services as $name => $class) {
+        expect($client->$name)->toBeInstanceOf($class);
+    }
 });
