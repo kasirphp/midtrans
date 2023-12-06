@@ -64,12 +64,10 @@ class BaseMidtransClient
      */
     private array $config;
 
-    public function __construct($config = [], PsrClientInterface $httpClient = null, bool $sandbox = false)
+    public function __construct(array|string $config = [], PsrClientInterface $httpClient = null, bool $sandbox = false)
     {
         if (is_string($config)) {
             $config = ['key' => $config];
-        } elseif (!is_array($config)) {
-            throw new InvalidArgumentException('$config must be a string or an array');
         }
 
         if (is_null($httpClient)) {
