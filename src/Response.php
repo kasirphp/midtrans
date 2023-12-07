@@ -1,18 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kasir\Midtrans;
 
 use Psr\Http\Message\ResponseInterface;
 
 class Response
 {
-    public ResponseInterface $response;
-
     public ?array $decoded = null;
 
-    public function __construct($response)
+    public function __construct(public ResponseInterface $response)
     {
-        $this->response = $response;
     }
 
     public function getStatusCode(): int
@@ -35,7 +34,7 @@ class Response
     protected function checkDecoded(): void
     {
         if (is_null($this->decoded)) {
-            $this->decoded = json_decode($this->getBody(), true);
+            $this->decoded = json_decode($this->getBody(), true, 512, JSON_THROW_ON_ERROR);
         }
     }
 }

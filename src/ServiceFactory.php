@@ -8,12 +8,10 @@ use Kasir\Midtrans\Services\PaymentService;
 
 class ServiceFactory
 {
-    private BaseMidtransClient $client;
     private array $services;
 
-    public function __construct($client)
+    public function __construct(private readonly BaseMidtransClient $client)
     {
-        $this->client = $client;
         $this->services = [];
     }
 

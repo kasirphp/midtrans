@@ -17,27 +17,27 @@ class BaseMidtransClient
     /**
      * The default API base URL.
      */
-    public const DEFAULT_API_BASE = 'https://api.midtrans.com';
+    final public const DEFAULT_API_BASE = 'https://api.midtrans.com';
 
     /**
      * The default sandbox API base URL.
      */
-    public const DEFAULT_SANDBOX_API_BASE = 'https://api.sandbox.midtrans.com';
+    final public const DEFAULT_SANDBOX_API_BASE = 'https://api.sandbox.midtrans.com';
 
     /**
      * The default app base URL.
      */
-    public const DEFAULT_APP_BASE = 'https://app.midtrans.com';
+    final public const DEFAULT_APP_BASE = 'https://app.midtrans.com';
 
     /**
      * The default sandbox app base URL.
      */
-    public const DEFAULT_SANDBOX_APP_BASE = 'https://app.sandbox.midtrans.com';
+    final public const DEFAULT_SANDBOX_APP_BASE = 'https://app.sandbox.midtrans.com';
 
     /**
      * The default config.
      */
-    public const DEFAULT_CONFIG = [
+    final public const DEFAULT_CONFIG = [
         'key' => null,
         'api_base' => self::DEFAULT_API_BASE,
         'app_base' => self::DEFAULT_APP_BASE,
@@ -46,7 +46,7 @@ class BaseMidtransClient
     /**
      * The default sandbox config.
      */
-    public const SANDBOX_CONFIG = [
+    final public const SANDBOX_CONFIG = [
         'key' => null,
         'api_base' => self::DEFAULT_SANDBOX_API_BASE,
         'app_base' => self::DEFAULT_SANDBOX_APP_BASE,
@@ -177,7 +177,7 @@ class BaseMidtransClient
             $request = $request->withHeader($name, $value);
         }
 
-        return $request->withBody($factory->createStream(json_encode($params)));
+        return $request->withBody($factory->createStream(json_encode($params, JSON_THROW_ON_ERROR)));
     }
 
     private function constructRequestHeaders(array $headers): array // TODO: Use HeaderFactory
