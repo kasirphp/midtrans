@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Kasir\Midtrans;
+namespace Kasir\Midtrans\Services;
+
+use Kasir\Midtrans\BaseMidtransClient;
 
 abstract class AbstractService
 {

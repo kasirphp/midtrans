@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Kasir\Midtrans;
+namespace Kasir\Midtrans\Services;
 
+use Kasir\Midtrans\Response;
 use Psr\Http\Client\ClientExceptionInterface;
 
 class PaymentService extends AbstractService

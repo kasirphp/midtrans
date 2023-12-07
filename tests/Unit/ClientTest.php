@@ -1,7 +1,7 @@
 <?php
 
 use Kasir\Midtrans\MidtransClient;
-use Kasir\Midtrans\PaymentService;
+use Kasir\Midtrans\Services\PaymentService;
 
 it('can create a client', function () {
     $client = new MidtransClient('key');

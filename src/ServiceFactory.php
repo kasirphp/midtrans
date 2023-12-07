@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Kasir\Midtrans;
 
+use Kasir\Midtrans\Services\PaymentService;
+
 class ServiceFactory
 {
     private BaseMidtransClient $client;

@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Kasir\Midtrans\BaseMidtransClient;
-use Kasir\Midtrans\PaymentService;
 use Kasir\Midtrans\Response;
+use Kasir\Midtrans\Services\PaymentService;
 use Psr\Http\Message\ResponseInterface;
 
 it('may send card tokenization request', function () {
