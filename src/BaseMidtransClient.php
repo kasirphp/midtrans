@@ -62,6 +62,9 @@ class BaseMidtransClient
      */
     private array $config;
 
+    /**
+     * Create a new Midtrans client instance.
+     */
     public function __construct(array|string $config = [], PsrClientInterface $httpClient = null, bool $sandbox = false)
     {
         if (is_string($config)) {
@@ -82,6 +85,9 @@ class BaseMidtransClient
         $this->config = $config;
     }
 
+    /**
+     * Get the config.
+     */
     public function getConfig($key = null): array|string
     {
         if ($key) {
@@ -91,11 +97,17 @@ class BaseMidtransClient
         return $this->config;
     }
 
+    /**
+     * Get the HTTP client instance.
+     */
     public function getHttpClient(): PsrClientInterface
     {
         return $this->httpClient;
     }
 
+    /**
+     * Get the base API URL for the given path.
+     */
     public function getUriForApi(string $route): string
     {
         if (!str_starts_with($route, '/')) {
@@ -141,7 +153,7 @@ class BaseMidtransClient
     }
 
     /**
-     * @throws ClientExceptionInterface
+     * Send a request to the given path, with the given parameters.
      */
     public function request($method, $absUrl, $headers, $params): ResponseInterface
     {
@@ -150,6 +162,9 @@ class BaseMidtransClient
         return $this->getHttpClient()->sendRequest($request);
     }
 
+    /**
+     * Construct a request.
+     */
     private function constructRequest($method, $absUrl, $headers, $params): RequestInterface
     {
         $factory = new Psr17Factory();
